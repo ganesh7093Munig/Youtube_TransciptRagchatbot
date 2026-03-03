@@ -22,6 +22,9 @@ Users can enter a YouTube video URL and ask questions — the system generates a
 
 ## 📂 Project Structure Repo
 
+## 📁 Project Structure
+
+```
 youtube-transcript-rag/
 │
 ├─ frontend/
@@ -39,7 +42,7 @@ youtube-transcript-rag/
 ├─ main.py                # FastAPI backend
 ├─ requirements.txt       # Python dependencies
 └─ .env                   # Hugging Face API token (local only, not pushed)
-
+```
 ## ⚡ How it Works
 
 1. **User enters a YouTube URL** and their question in the chatbot UI.
@@ -155,7 +158,8 @@ Chatbot generates answer in real-time
 │ Answer        │ 
 └───────────────┘  
 
-# 🔍 Detailed RAG Flow
+
+## 🔍 Detailed RAG Flow
 
 ```
 User Question
@@ -167,7 +171,7 @@ Session Memory (previous turns)
 Query Rewriter (LLM)
      │
      ▼
-chroma or FIASS Similarity Search
+Chroma / FAISS Similarity Search
      │
      ▼
 Top-K Transcript Chunks
@@ -175,8 +179,10 @@ Top-K Transcript Chunks
      ▼
 Transcript Relevance Check
      │
-     ├── Relevant ──► Answer Generator (LLM)
-     
+     ├── Relevant ─────► Answer Generator (LLM)
+                          │
+                          ▼
+                       Final Answer
 ```
 ## 🛡️ Security Note
 
@@ -202,5 +208,6 @@ YouTube Transcript API
 ## Author
 
 Ganesh Munigeti – BS Software Engineering
+
 
 
